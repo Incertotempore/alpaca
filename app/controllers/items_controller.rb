@@ -19,12 +19,17 @@ class ItemsController < ApplicationController
   end
 
   def my_items
+    @items = Item.all
   end
 
-  def my_item
+  def edit
+    @item = Item.find(params[:id])
   end
 
-  def patch
+  def update
+    @item = Item.find(params["id"])
+    @item.update(item_params)
+    redirect_to my_items_path
   end
 
   private

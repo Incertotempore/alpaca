@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :reviews, only: [ :new, :create ]
   end
-  get    "pages/about"
-  get    "pages/faq"
-  get    "pages/contact"
+  get    "about", to: "pages#about"
+  get    "faq", to: "pages#faq"
+  get    "contact",to: "pages#contact"
 end

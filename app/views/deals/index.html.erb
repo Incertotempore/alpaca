@@ -1,0 +1,11 @@
+<h1>! Provisional View for Testing !</h1>
+<h3>List of deals</h3>
+<% @deals.each do |deal| %>
+  <p> <%= deal %> - from <%=deal.date_start%> to <%=deal.date_end%> </p>
+<% end %>
+
+<%= link_to "Return to root", root_path, class: "btn btn-danger" %>
+
+<!--
+fields : date_start, :date_end, :user_id, :item_id
+ -->

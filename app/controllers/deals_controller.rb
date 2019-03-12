@@ -7,18 +7,16 @@ class DealsController < ApplicationController
 
   def new
     @deal = Deal.new
-    @user = User.find(params[:user_id])
     @item = Item.find(params[:item_id])
+    @user = current_user
+    create # for testing as no button for the moment
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @item = Item.find(params[:item_id])
-    @deal = Deal.new(deal_params)
     @deal.user = @user
     @deal.item = @item
     if @deal.save
-      redirect_to item_path
+      redirect_to items_path
     else
       render :new
     end

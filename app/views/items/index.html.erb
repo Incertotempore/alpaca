@@ -1,0 +1,6 @@
+<h2>Displays all the items (except of the items of the current user)</h2>
+<% @items.each do |item|               %>
+<%   unless item.user == current_user  %>
+     <p><%= link_to item.name, item_path(item) %></p>
+<%   end                               %>
+<% end                                 %>

@@ -11,6 +11,26 @@
   width: 40px;
 }
 
+// .nav-item {
+//   color: white;
+// }
+
+.nav-link {
+  color: #030d54;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #030d54;
+}
+
 .nav-item {
-  color: white;
+  color: #030d54;
+  font-weight: bold;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-size: 22px;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
 }

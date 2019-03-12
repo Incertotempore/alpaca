@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    redirect_to root_path
   end
 
   def contacts

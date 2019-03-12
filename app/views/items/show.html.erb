@@ -6,4 +6,6 @@
 <!-- This looks strange because of the faker, should be ok in the end -->
 <p><%= @item.description %></p>
 <p><strong><%= @item.price %></strong></p>
-<%= link_to "Rent Item", "#" , class: "btn btn-success"%>
+
+<%= link_to "Rent Item", new_item_deal_path(@item), class: "btn btn-success"%>
+

@@ -15,16 +15,27 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     @item.save
-    redirect_to item_path(@item)
+    redirect_to my_items_path(@item)
   end
 
   def my_items
+    @items = Item.all
   end
 
-  def my_item
+  def edit
+    @item = Item.find(params[:id])
   end
 
-  def patch
+  def update
+    @item = Item.find(params["id"])
+    @item.update(item_params)
+    redirect_to my_items_path
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to my_items_path
   end
 
   private

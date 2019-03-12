@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   end
   get    "about", to: "pages#about"
   get    "faq", to: "pages#faq"
-  get    "contact",to: "pages#contact"
+  get    "contact", to: "pages#contact"
+
+  get    "my_items", to: "items#my_items"
 end

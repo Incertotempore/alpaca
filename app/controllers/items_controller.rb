@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    find_item
   end
 
   def new
@@ -23,17 +23,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    find_item
   end
 
   def update
-    @item = Item.find(params["id"])
+    @item = Item.find(params[:id])
     @item.update(item_params)
     redirect_to my_items_path
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    find_item
     @item.destroy
     redirect_to my_items_path
   end
@@ -42,5 +42,9 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:category, :name, :price, :description, :picture)
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end

@@ -1,11 +1,19 @@
+<!--
 <h2>Displays the item and its properties</h2>
 <h3><%= @item.name %></h3>
-<!-- This looks strange because of the faker, should be ok in the end -->
 <img src="<%= @item.picture %>" alt="picture of <%= @item.name %>">
 <p><%= @item.category %></p>
-<!-- This looks strange because of the faker, should be ok in the end -->
 <p><%= @item.description %></p>
 <p><strong><%= @item.price %></strong></p>
-
-<%= link_to "Rent Item", new_item_deal_path(@item), class: "btn btn-success"%>
-
+<%= link_to "Rent Item", new_item_deal_path(@item), class: "btn btn-success"%> -->
+<div class="product">
+  <div class="product-description">
+    <h3><%= @item.name %></h3>
+    <p><%= @item.category %></p>
+    <p><%= @item.description %></p>
+    <p><strong>&#8364;<%= @item.price %> / day</strong></p>
+    <p class="rent-link"><%= link_to "Rent Item", new_item_deal_path(@item), class: "btn btn-warning btn-lg"%></p>
+  </div>
+  <div class="product-image">
+  </div>
+</div>

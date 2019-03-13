@@ -8,7 +8,7 @@
 
   <section class="card__body">
     <h5 class="card__body--price"> <a href="#"><%= item.price %>€/day</a></h5>
-    <h1 class="card__body--title"> <a href="#"><%= item.name %></a></h1>
+    <h1 class="card__body--title"> <%= link_to item.name, item_path(item)%></h1>
     <h2 class="card__body--subtitle"><%= item.address %></h2>
     <p class="card__body--description"><%= item.description %></p>
   </section>
@@ -21,3 +21,4 @@
       <span class="fa fa-star"></span></div>
   </footer>
 </article>
+

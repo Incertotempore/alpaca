@@ -1,0 +1,29 @@
+.wrapper {
+  // display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 60px;
+}
+
+// .card {
+//   width: 280px;
+//   height: 360px;
+//   border-radius: 15px;
+//   padding: 1.5rem;
+//   background: white;
+//   position: relative;
+
+//   // display: grid;
+//   // grid-template-columns: 1fr 1fr 1fr 1fr;
+//   // grid-gap: 16px;
+//   display: flex;
+//   align-items: flex-end;
+
+
+//   transition: 0.4s ease-out;
+//   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+// }

@@ -4,10 +4,20 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                required: true,
+                placeholder: "John",
+                autofocus: true %>
+    <%= f.input :last_name,
+                placeholder: "Doe",
+                required: true %>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
+                placeholder: "johndoe@gmail.com",
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :address,
+                placeholder: "2453 Golden Ridge Road, London, England",
+                required: true %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

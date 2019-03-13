@@ -1,11 +1,20 @@
-<h2>Displays all the items (except of the items of the current user)</h2>
-<% @items.each do |item|               %>
-<%   unless item.user == current_user  %>
-     <p><%= link_to item.name, item_path(item) %></p>
-<%   end                               %>
-<% end                                 %>
 
-<div class="index_grid">
+<h2>Displays all the items (except of the items of the current user)</h2>
+<div class="wrapper">
+  <% @items.each do |item| %>
+      <div class="product-card">
+        <% unless item.user == current_user %>
+         <!-- <p><#%= link_to item.name, item_path(item) %></p> -->
+         <%= render 'shared/product_card', item: item %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<!-- <div class="index_grid">
     <article class="product_card">
     <header class="card__header">
       <img class="card__header--thumb" src=""/>
@@ -135,7 +144,7 @@
         <span class="fa fa-star"></span></div>
     </footer>
   </article>
-</div>
+</div> -->
 
 <div
   id="map"

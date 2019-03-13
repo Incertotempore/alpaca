@@ -1,6 +1,14 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    # @items = Item.all
+    @items = Item.where.not(latitude: nil, longitude: nil)
+
+    @markers = @items.map do |item|
+      {
+        lng: item.longitude,
+        lat: item.latitude
+      }
+    end
   end
 
   def show

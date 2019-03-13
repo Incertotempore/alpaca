@@ -1,21 +1,15 @@
-
-<h2>Displays all the items (except of the items of the current user)</h2>
 <div class="wrapper">
-  <% @items.each do |item| %>
-      <div class="product-card">
-        <% unless item.user == current_user %>
-         <!-- <p><#%= link_to item.name, item_path(item) %></p> -->
-         <%= render 'shared/product_card', item: item %>
+  <div class="cards">
+    <% @items.each do |item| %>
+      <%= link_to item_path(item.id) do %>
+        <div class="product-card">
+          <% unless item.user == current_user %>
+           <!-- <p><#%= link_to item.name, item_path(item) %></p> -->
+           <%= render 'shared/product_card', item: item %>
+          <% end %>
+        </div>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-

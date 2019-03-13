@@ -26,6 +26,8 @@ puts 'Creating Users...'
   puts "#{new_user} - #{new_user.first_name} #{new_user.last_name} has been created as a #{new_user.valid?} user."
 end
 
+italy = ['52 Corso Magenta, Milan', 'Piazza Duomo, Milan', 'Via Ariberto, Milan', 'Via Torino, Milan', '12, via Crema, Milan']
+
 puts 'Creating Items...'
 10.times do
   new_item = Item.new(
@@ -34,7 +36,8 @@ puts 'Creating Items...'
     price: Faker::Commerce.price,
     description: Faker::Lorem.paragraphs(1, true),
     picture: "",
-    user_id: User.all.sample.id
+    user_id: User.all.sample.id,
+    address: Faker::Address.city
     )
   new_item.save
   puts "#{new_item} - #{new_item.name} has been created as a #{new_item.valid?} item."

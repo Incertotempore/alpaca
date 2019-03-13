@@ -1,0 +1,23 @@
+<article class="product_card">
+  <header class="card__header">
+    <img class="card__header--thumb" src=""/>
+    <section class="card__avatar">
+    <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+    </section>
+  </header>
+
+  <section class="card__body">
+    <h5 class="card__body--price"> <a href="#"><%= item.price %>€/day</a></h5>
+    <h1 class="card__body--title"> <a href="#"><%= item.name %></a></h1>
+    <h2 class="card__body--subtitle"><%= item.address %></h2>
+    <p class="card__body--description"><%= item.description %></p>
+  </section>
+  <footer class="card__footer"><span class="icon icon--rating">Rating:</span>
+    <div class="stars">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span></div>
+  </footer>
+</article>

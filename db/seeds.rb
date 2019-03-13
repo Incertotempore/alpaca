@@ -37,7 +37,7 @@ puts 'Creating Items...'
     description: Faker::Lorem.paragraphs(1, true),
     picture: "",
     user_id: User.all.sample.id,
-    address: Faker::Address.city
+    address: italy.sample
     )
   new_item.save
   puts "#{new_item} - #{new_item.name} has been created as a #{new_item.valid?} item."

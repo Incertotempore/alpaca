@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
   def index
-
     @items_mapped = Item.where.not(latitude: nil, longitude: nil)
 
     @markers = @items_mapped.map do |item|

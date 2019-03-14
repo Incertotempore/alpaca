@@ -1,8 +1,9 @@
-<p>You are renting:</p>
+<div class="form-container">
+<h4>You are renting:</h4>
 <p><%= @item.name %></p>
-<p>from</p>
+<h4>From:</h4>
 <p><%= @item.user.first_name %> <%= @item.user.last_name %></p>
-<p>for</p>
+<h4>For:</h4>
 <p>&#8364;<%= @item.price %> / day</p>
 
 <%= simple_form_for @deal do |f| %>
@@ -12,3 +13,4 @@
   <%= f.input :date_end, as: :string, required: true, input_html: {class: "datepicker"} %>
  <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
+</div>

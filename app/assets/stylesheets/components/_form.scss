@@ -44,6 +44,17 @@
   letter-spacing: 3px;
 }
 
+.title-form h2 {
+  margin-bottom: 3rem;
+  font-size: 40px;
+  line-height: 1.2em;
+  // font-family: Mabry-Black, Helvetica, Arial;
+  font-weight: 600;
+  color: #030d54;
+  letter-spacing: 3px;
+  margin-left: 1rem;
+}
+
 .title-log-in h1 {
   margin-bottom: 3rem;
   font-size: 40px;
@@ -76,6 +87,7 @@
   text-align: center;
 
 }
+
 .form-container-success {
   min-height: 100vh;
   padding-left: 15rem;
@@ -103,7 +115,15 @@
 }
 }
 
+.align-btn {
+  display: flex;
+}
 
+#botton-bnt {
+  margin-left: 1rem;
+  margin-top: 3rem;
+
+}
 
 
 

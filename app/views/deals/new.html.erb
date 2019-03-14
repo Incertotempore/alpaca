@@ -8,5 +8,7 @@
 <%= simple_form_for @deal do |f| %>
  <%= f.hidden_field :user_id, :value => current_user.id %>
  <%= f.hidden_field :item_id, :value => @item.id %>
+ <%= f.input :date_start, as: :string, required: true, input_html: {class: "datepicker"} %>
+  <%= f.input :date_end, as: :string, required: true, input_html: {class: "datepicker"} %>
  <%= f.button :submit, class: "btn btn-success" %>
 <% end %>

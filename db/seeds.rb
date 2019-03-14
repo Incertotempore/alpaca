@@ -10,8 +10,8 @@ require "faker"
 
 puts 'Cleaning database...'
   User.destroy_all
-  Item.destroy_all
   Deal.destroy_all
+  Item.destroy_all
 
 puts 'Creating Users...'
 5.times do

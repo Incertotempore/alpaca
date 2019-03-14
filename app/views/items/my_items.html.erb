@@ -1,17 +1,20 @@
-<h2>Displays all the items the current user is offering for renting</h2>
-<% @items.each do |item|                                          %>
-<%   if item.user == current_user                                 %>
-     <p><%= link_to item.name, item_path(item) %></p>
-<%= link_to "Edit Item", edit_item_path(item), class: "btn btn-success"  %>
+<div class="form-container">
+  <div class="title-form">
+  <h2>Displays all the items the current user is offering for renting</h2>
+  <% @items.each do |item|                                          %>
+  <%   if item.user == current_user                                 %>
+       <p><%= link_to item.name, item_path(item) %></p>
+  <%= link_to "Edit Item", edit_item_path(item), class: "btn btn-success"  %>
 
-  <% unless item.deals.present? %>
-    <%= link_to 'Delete Item', item_path(item), class: "btn btn-warning",
-    data: {:confirm => 'Are you sure?'}, :method => :delete %>
-  <% else %>
-    <%= link_to "On Deal", "#", class: "btn btn-warning disabled" %>
+    <% unless item.deals.present? %>
+      <%= link_to 'Delete Item', item_path(item), class: "btn btn-warning",
+      data: {:confirm => 'Are you sure?'}, :method => :delete %>
+    <% else %>
+      <%= link_to "On Deal", "#", class: "btn btn-warning disabled" %>
+    <% end %>
   <% end %>
-
-<%   end                                                          %>
-<% end                                                            %>
+  <% end %>
+  </div>
+</div>
 
 

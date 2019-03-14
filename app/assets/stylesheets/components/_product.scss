@@ -1,7 +1,7 @@
 .product {
   display: flex;
   width: 100%;
-  height: calc(100vh - 100px - 89px);
+  // height: calc(100vh - 100px - 89px);
   padding: 5em;
   background-color: #a7efe9;
   h3 {
@@ -21,17 +21,24 @@
 .product-description {
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 30%;
+  flex-basis: 50%;
+  margin-right: 30px;
 }
 
 .product-image {
+  box-shadow: 0px 0px 15px #31CAB9;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 70%;
+  flex-basis: 50%;
   background: url(https://picsum.photos/1000/1500/?random) no-repeat center center;
 }
 
 .rent-link {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
   margin: auto;
+  a {
+    min-width: 160px;
+  }
 }

@@ -1,41 +1,23 @@
+
 <div class="product">
   <div class="product-description">
     <h3><%= @item.name %></h3>
     <p><%= @item.category %></p>
     <p><%= @item.description %></p>
     <p><strong>&#8364;<%= @item.price %> / day</strong></p>
-    <p class="rent-link"><%= link_to "Rent Item", deal_new_path(@item), class: "btn btn-warning btn-lg"%></p>
+
+<% @item.reviews.each do |review| %>
+  <p><%= review.creator || "no user assigned" %></p>
+  <p><%= review.comment %></p>
+  <p><%= review.rating %></p>
+<% end %>
+
   </div>
   <div class="product-image">
   </div>
-</div> -->
-
-<!-- VERSION NLX -->
-<div class="wrapper">
-  <div class="cards" style="width: 50%">
-    <div class="product-card">
-
-      <h3><strong><%= @item.price %> €</strong></h3>
-
-      <h2><%= @item.name %></h2>
-
-      <p><%= @item.description %></p>
-
-      <p></p>
-      <span class="rent-link"><%= link_to "Rent Item", new_deal_path(@item), class: "btn btn-warning"%></span>
-      <span class="rent-link"><%= link_to "back to list", items_path(@item), class: "btn btn-primary"%></span>
-      <p></p>
-
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width: 200px; height: 200px;">
-      <p></p>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width: 200px; height: 200px;">
-      <p></p>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width: 200px; height: 200px;">
-      <p></p>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" style="width: 200px; height: 200px;">
-      <p></p>
-
-    </div>
-  </div>
-  <div id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+  <p class="rent-link"><%= link_to "Rent Item", deal_new_path(@item), class: "btn btn-warning btn-lg"%>
+  <%= link_to "Go Back", items_path, class: "btn btn-warning btn-lg" %>
+  <%= link_to "Add a review", new_item_review_path(@item), class: "btn btn-warning btn-lg" %>
+  </p>
+

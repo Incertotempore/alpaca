@@ -1,11 +1,18 @@
 <div>
   <div class="header-home">
     <div class="banner-content">
-      <div class="title">
-        <h1>Rent</h1>
-        <h1>almost</h1>
-        <h1>anything.</h1>
+      <div class="added-div">
+        <div class="title">
+          <h1>Rent</h1>
+          <h1>almost</h1>
+          <h1>anything.</h1>
+        </div>
+        <!-- <img src="method-draw-image.svg" /> -->
+        <%= image_tag("method-draw-image.svg", id: "logo")%>
       </div>
+
+
+
       <div id="subtitle"><h3>What do you need to rent?</h3></div>
       <div class="search-container">
         <form method="get" action="/items">
@@ -15,9 +22,7 @@
 
           <!-- <a class="btn btn-warning btn-lg" href="/items">Search</a> -->
 
-          <button type="submit" class="btn-warning"><i class="fa fa-search"></i></button>
-
-
+          <button type="submit" class="button-warning">Search</button>
         </form>
       </div>
     </div>

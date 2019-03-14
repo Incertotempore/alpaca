@@ -4,6 +4,6 @@ class Item < ApplicationRecord
   has_many :reviews
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
   mount_uploader :photo, PhotoUploader
-  belongs_to :deal
 end

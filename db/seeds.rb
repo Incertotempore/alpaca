@@ -39,6 +39,7 @@ puts 'Creating Items...'
     user_id: User.all.sample.id,
     address: italy.sample
     )
+    new_item.remote_photo_url = "http://lorempixel.com/400/400/"
   new_item.save
   puts "#{new_item} - #{new_item.name} has been created as a #{new_item.valid?} item."
 end

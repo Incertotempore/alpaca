@@ -1,5 +1,9 @@
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+  <% if item.photo.present? %>
+    <%= cl_image_tag (item.photo) %>
+  <% else %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+  <% end %>
   <div class="card-product-infos">
     <h3><strong><%= item.price %> €</strong></h3>
     <h2><%= item.name %></h2>

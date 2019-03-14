@@ -38,7 +38,6 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:user_id, :item_id)
+    params.require(:deal).permit(:user_id, :item_id, :date_start, :date_end)
   end
-
 end

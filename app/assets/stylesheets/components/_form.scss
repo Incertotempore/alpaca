@@ -44,6 +44,17 @@
   letter-spacing: 3px;
 }
 
+.title-form h2 {
+  margin-bottom: 3rem;
+  font-size: 40px;
+  line-height: 1.2em;
+  // font-family: Mabry-Black, Helvetica, Arial;
+  font-weight: 600;
+  color: #030d54;
+  letter-spacing: 3px;
+  margin-left: 1rem;
+}
+
 .title-log-in h1 {
   margin-bottom: 3rem;
   font-size: 40px;
@@ -77,7 +88,42 @@
 
 }
 
+.form-container-success {
+  min-height: 100vh;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background-image: url(https://assets.fatllama.com/static/img/rebrand-assets/list-item/pink-background.svg);
+  background-size: 50rem;
+  background-position: right top; /*Positioning*/
+  background-repeat: no-repeat;
+  background-color: white;
+  h1 {
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+  .rent-link {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  a {
+    min-width: 160px;
+    margin: 5px;
+  }
+}
+}
 
+.align-btn {
+  display: flex;
+}
+
+#botton-bnt {
+  margin-left: 1rem;
+  margin-top: 3rem;
+
+}
 
 
 

@@ -29,7 +29,7 @@ end
 italy = ['52 Corso Magenta, Milan', 'Piazza Duomo, Milan', 'Via Ariberto, Milan', 'Via Torino, Milan', '12, via Crema, Milan']
 
 puts 'Creating Items...'
-10.times do
+20.times do
   new_item = Item.new(
     category: ["clothe", "car", "tool", "machine"].sample,
     name: Faker::Commerce.product_name,
@@ -45,7 +45,7 @@ puts 'Creating Items...'
 end
 
 puts "Creating Deals..."
-5.times do
+10.times do
   new_deal = Deal.new(
     date_start: Date.today, #Faker::Date.between(200.days.ago, 100.days.ago),
     date_end: Date.today, #Faker::Date.between(100.days.ago, Date.today),

@@ -29,5 +29,53 @@ padding-left: 11rem;
 
 
 #subtitle {
-  margin-top: 3rem;
+  margin-top: 0;
 }
+
+.added-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+
+  // width: 50%;
+  // margin-top: 10px;
+  // margin-right: 10px;
+  // margin-bottom: 10px;
+  padding-right: 15rem;
+  max-height: 40vh;
+  max-width: 40vw;
+
+}
+
+// .search-container button {
+//     padding: 6px 10px;
+//     margin-top: 8px;
+//     margin-right: 16px;
+//     background: #EF7A6B;
+//     font-size: 17px;
+//     border: none;
+// }
+
+.button-warning {
+  border-radius: 3px;
+  background-color: #FDFB70 !important;
+  margin-left: 1rem;
+}
+
+.search-container {
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+

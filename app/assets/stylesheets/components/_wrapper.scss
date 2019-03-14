@@ -1,0 +1,22 @@
+
+.wrapper {
+  display: flex;
+}
+
+.cards {
+  flex-grow: 1;
+  display: grid;
+  padding: 10px;
+
+}
+
+#map {
+    height: 100vh;
+    position: sticky !important; /* !important to override Gmaps inline CSS */
+    top: 0 !important;
+    display: flex;
+    width: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

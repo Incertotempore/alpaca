@@ -34,10 +34,10 @@ puts 'Creating Items...'
     category: ["clothe", "car", "tool", "machine"].sample,
     name: Faker::Commerce.product_name,
     price: Faker::Commerce.price,
-    description: Faker::Lorem.paragraphs(1, true),
+    description: Faker::Lorem.paragraphs,
     picture: "",
     user_id: User.all.sample.id,
-    address: Faker::Address.city
+    address: italy.sample
     )
   new_item.save
   puts "#{new_item} - #{new_item.name} has been created as a #{new_item.valid?} item."

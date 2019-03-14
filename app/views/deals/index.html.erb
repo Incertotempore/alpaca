@@ -6,6 +6,7 @@
     <% empty_flag = false %>
     <h3>item: <%= deal.item.name %></h3>
     <p>from: <%= deal.item.user.first_name %> <%= deal.item.user.last_name %></p>
+    <p>between: <%= deal.date_start %> - <%= deal.date_end %></p>
     <p style="color: red;">price: - &#8364;<%= deal.item.price %> / day</p>
     <hr>
   <% end %>

@@ -8,3 +8,100 @@
   border: none;
   cursor: pointer;
 }
+
+.form-container {
+  min-height: 100vh;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background-image: url(https://assets.fatllama.com/static/img/rebrand-assets/list-item/pink-background.svg);
+  background-size: 50rem;
+  background-position: right top; /*Positioning*/
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.form-container img {
+  position: bottom left;
+
+}
+.title-form {
+  display: flex;
+}
+
+.title-form img {
+  margin-left: 20rem;
+}
+
+.title-form h1 {
+  margin-bottom: 3rem;
+  font-size: 60px;
+  line-height: 1.2em;
+  // font-family: Mabry-Black, Helvetica, Arial;
+  font-weight: 800;
+  color: #030d54;
+  letter-spacing: 3px;
+}
+
+.title-log-in h1 {
+  margin-bottom: 3rem;
+  font-size: 40px;
+  line-height: 1.2em;
+  // font-family: Mabry-Black, Helvetica, Arial;
+  font-weight: 800;
+  color: #030d54;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.form-container-log-in {
+  min-height: 65vh;
+  min-width: 30vw;
+
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+    // background-image: url(https://assets.fatllama.com/static/img/rebrand-assets/list-item/pink-background.svg);
+    // background-size: 10rem;
+    // background-position: bottom left; /*Positioning*/
+    // background-repeat: no-repeat;
+    // transform: scaleX(-1);
+  background-color: white;
+  border-width: 2px;
+  border-radius: 3px;
+  border-color: black;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

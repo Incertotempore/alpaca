@@ -1,17 +1,42 @@
-<h2>Displays all the items the current user is offering for renting</h2>
-<% @items.each do |item|                                          %>
-<%   if item.user == current_user                                 %>
-     <p><%= link_to item.name, item_path(item) %></p>
-<%= link_to "Edit Item", edit_item_path(item), class: "btn btn-success"  %>
-
-  <% unless item.deals.present? %>
-    <%= link_to 'Delete Item', item_path(item), class: "btn btn-warning",
-    data: {:confirm => 'Are you sure?'}, :method => :delete %>
-  <% else %>
-    <%= link_to "On Deal", "#", class: "btn btn-warning disabled" %>
+<!-- <div class="form-container">
+  <div class="title-form">
+  <h2>Displays all the items the current user is offering for renting</h2>
+  <% @items.each do |item| %>
+  <% if item.user == current_user %>
+    <p><%= link_to item.name, item_path(item) %></p>
+    <%= link_to "Edit Item", edit_item_path(item), class: "btn btn-success" %>
+    <% unless item.deals.present? %>
+      <%= link_to 'Delete Item', item_path(item), class: "btn btn-warning",
+      data: {:confirm => 'Are you sure?'}, :method => :delete %>
+    <% else %>
+      <%= link_to "On Deal", "#", class: "btn btn-warning disabled" %>
+      <% end %>
+    <% end %>
   <% end %>
+  </div>
+</div> -->
 
-<%   end                                                          %>
-<% end                                                            %>
+<h2 style="margin-left: 15px; margin-top: 15px;">Your items for renting</h2>
+
+<%= link_to "Back to list", items_path, class: "btn btn-warning", style: 'margin-left: 15px;' %>
 
 
+<div class="wrapper" style="margin-left: 15px;">
+
+  <div class="cards">
+    <% @items.each do |item| %>
+      <% if item.user == current_user %>
+      <p></p>
+      <%= render 'shared/product_card', item: item %>
+      <span><%= link_to "Edit Item", edit_item_path(item), class: "btn btn-success" %></span>
+      <% unless item.deals.present? %>
+        <span><%= link_to 'Delete Item', item_path(item), class: "btn btn-warning",
+        data: {:confirm => 'Are you sure?'}, :method => :delete %></span>
+        <% else %>
+      <p></p>
+        <span><%= link_to "On Deal", "#", class: "btn btn-warning disabled" %></span>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -3,10 +3,7 @@
     <% @items.each do |item| %>
       <%= link_to item_path(item.id) do %>
         <div class="product-card">
-          <% unless item.user == current_user %>
-           <!-- <p><#%= link_to item.name, item_path(item) %></p> -->
            <%= render 'shared/product_card', item: item %>
-          <% end %>
         </div>
       <% end %>
     <% end %>

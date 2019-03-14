@@ -1,8 +1,17 @@
-<%= simple_form_for @item do |f| %>
- <%= f.input  :category %>
- <%= f.input  :name %>
- <%= f.input  :price %>
- <%= f.input  :description %>
- <%= f.input  :picture %>
- <%= f.button :submit, class: "btn btn-success" %>
-<% end %>
+
+<div class="form-container">
+  <div class="title-form">
+    <h1>List your items:</h1>
+    <img src="https://assets.fatllama.com/static/img/rebrand-assets/list-item/llama-with-pink.svg">
+  </div>
+  <%= simple_form_for @item do |f| %>
+    <%= f.input  :name, label: "What's the item?", error: "Name is mandatory, please specify one" %>
+    <%= f.input  :category %>
+    <%= f.input  :description, label: "Describe your item:" %>
+    <%= f.input  :price, hint: 'Insert a number.' %>
+    <%= f.input :photo, label: "Time for some nice pics 😉" %>
+    <%= f.input :photo_cache, as: :hidden %>
+   <%= f.button :submit, "List Item", class: "btn btn-success" %>
+  <% end %>
+</div>
+

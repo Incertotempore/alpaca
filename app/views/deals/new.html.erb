@@ -1,0 +1,12 @@
+<p>You are renting:</p>
+<p><%= @item.name %></p>
+<p>from</p>
+<p><%= @item.user.first_name %> <%= @item.user.last_name %></p>
+<p>for</p>
+<p>&#8364;<%= @item.price %> / day</p>
+
+<%= simple_form_for @deal do |f| %>
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+ <%= f.hidden_field :item_id, :value => @item.id %>
+ <%= f.button :submit, class: "btn btn-success" %>
+<% end %>

@@ -5,18 +5,25 @@ class DealsController < ApplicationController
     @deals = Deal.all
   end
 
+  def success
+    @deal = Deal.find(params[:id])
+  end
+
+  def show
+    @deal = Deal.find(params[:id])
+  end
+
   def new
     @deal = Deal.new
     @item = Item.find(params[:item_id])
-    @user = current_user
-    create # for testing as no button for the moment
+    @deal.user = current_user
+    @deal.item = @item
   end
 
   def create
-    @deal.user = @user
-    @deal.item = @item
+    @deal = Deal.new(deal_params)
     if @deal.save
-      redirect_to items_path
+      redirect_to deal_success_path(@deal)
     else
       render :new
     end
@@ -31,7 +38,7 @@ class DealsController < ApplicationController
   private
 
   def deal_params
-    params.require(:deal).permit(:date_start, :date_end, :user_id, :item_id)
+    params.require(:deal).permit(:user_id, :item_id)
   end
 
 end

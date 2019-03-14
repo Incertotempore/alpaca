@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { item: item })
       }
     end
-    
+
     if params.has_key?(:q)
 # search in SQL if found name containing anywhere(%) the value of research
       @items = Item.where('name ILIKE ? OR category ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")

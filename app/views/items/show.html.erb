@@ -4,7 +4,11 @@
     <p><%= @item.category %></p>
     <p><%= @item.description %></p>
     <p><strong>&#8364;<%= @item.price %> / day</strong></p>
+    <% if @item.user == current_user %>
+    <p class="rent-link"><%= link_to "Rent Item", deal_new_path(@item), class: "btn btn-warning btn-lg disabled"%></p>
+    <% else %>
     <p class="rent-link"><%= link_to "Rent Item", deal_new_path(@item), class: "btn btn-warning btn-lg"%></p>
+    <% end %>
   </div>
   <div class="product-image">
   </div>

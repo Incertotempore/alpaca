@@ -6,7 +6,8 @@ class ItemsController < ApplicationController
       {
         lng: item.longitude,
         lat: item.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { item: item })
+        infoWindow: render_to_string(partial: "infowindow", locals: { item: item }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
 

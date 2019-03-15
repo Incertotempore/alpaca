@@ -26,10 +26,19 @@ puts 'Creating Users...'
   puts "#{new_user} - #{new_user.first_name} #{new_user.last_name} has been created as a #{new_user.valid?} user."
 end
 
-italy = ['52 Corso Magenta, Milan', 'Piazza Duomo, Milan', 'Via Ariberto, Milan', 'Via Torino, Milan', '12, via Crema, Milan']
+test_user = User.new(
+    first_name: "John",
+    last_name: "Rambo",
+    address: "Verona",
+    email: "test@test.com",
+    password: "123456"
+    )
+test_user.save
+
+europe = ['Verona', 'Roma', 'Milano', 'Turino', 'Trento', 'Como', 'Bologna', 'Maranello']
 
 puts 'Creating Items...'
-20.times do
+10.times do
   new_item = Item.new(
     category: ["clothe", "car", "tool", "machine"].sample,
     name: Faker::Commerce.product_name,
@@ -37,7 +46,7 @@ puts 'Creating Items...'
     description: Faker::Lorem.paragraphs,
     picture: "",
     user_id: User.all.sample.id,
-    address: italy.sample
+    address: europe.sample
     )
     new_item.remote_photo_url = "http://lorempixel.com/400/400/"
   new_item.save
@@ -45,7 +54,7 @@ puts 'Creating Items...'
 end
 
 puts "Creating Deals..."
-10.times do
+5.times do
   new_deal = Deal.new(
     date_start: Date.today, #Faker::Date.between(200.days.ago, 100.days.ago),
     date_end: Date.today, #Faker::Date.between(100.days.ago, Date.today),

@@ -8,8 +8,10 @@
   <div class="wrapper" style="margin-left: 15px;">
 
     <div class="cards">
+      <% empty = true %>
       <% @items.each do |item| %>
         <% if item.user == current_user %>
+        <% empty = false %>
         <p></p>
         <%= render 'shared/product_card', item: item %>
 
@@ -26,8 +28,10 @@
         <% end %>
       <% end %>
     </div>
-
   </div>
+  <% if empty %>
+<p style="margin-left: 2vh;">You are currently not offering any items</p>
+<% end %>
   <div id="botton-bnt">
   <%= link_to "Back to list", items_path, class: "btn btn-warning" %>
   </div>

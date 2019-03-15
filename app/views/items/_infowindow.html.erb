@@ -1,1 +1,9 @@
-<h1>Hellloooooo!</h1>
+<!-- <h1>Helloo!</h1> -->
+
+<%= link_to "Show me", item_path(item.id) %>
+
+<% if item.photo.present? %>
+    <%= cl_image_tag item.photo, width: "100px" %>
+  <% else %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+  <% end %>

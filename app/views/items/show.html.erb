@@ -5,15 +5,20 @@
       <h4><%= @item.category %></h4>
       <p><%= @item.description %></p>
       <p><strong>&#8364;<%= @item.price %> / day</strong></p>
+      <% if @item.photo.present? %>
+        <%= cl_image_tag (@item.photo) %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <% end %>
       <div class="review">
         <% @item.reviews.each do |review| %>
-            <section class="card__avatar">
+        <section class="card__avatar">
           <p>
             <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" /><%= review.creator || "no user assigned" %>
           </p>
           <p>Review: <%= review.comment %></p>
           <p>Rating: <%= review.rating %></p>
-            </section>
+        </section>
         <% end %>
         <p class="rent-link">
           <%= link_to "Go Back", items_path, class: "btn btn-warning btn-lg" %>
@@ -21,10 +26,6 @@
           <%= link_to "Add a review", new_item_review_path(@item), class: "btn btn-warning btn-lg"%>
         </p>
       </div>
-
-    </div>
-
-    <div class="product-image">
     </div>
   </div>
 </div>

@@ -15,6 +15,7 @@
           <%= f.input :last_name,
                       placeholder: "Doe",
                       required: true %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :email,
                       required: true,
                       placeholder: "johndoe@gmail.com",
@@ -29,6 +30,8 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo,
+                      label: "Upload your profile picture here" %>
         </div>
 
         <div class="form-actions">

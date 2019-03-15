@@ -5,12 +5,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.item = Item.find(params[:item_id])
-    @review.save!
+    @review.item = @item
 
-    redirect_to item_path(@review.item)
+    if @review.save
+      redirect_to item_path(@review.item)
+    else
+      render :new
+    end
   end
 
   private

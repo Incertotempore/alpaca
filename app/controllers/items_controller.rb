@@ -1,22 +1,23 @@
 class ItemsController < ApplicationController
   def index
-    @items_mapped = Item.where.not(latitude: nil, longitude: nil)
+    if params.has_key?(:q)
+    # search in SQL if found name containing anywhere(%) the value of research
+      @items = Item.where('name ILIKE ? OR category ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+    else
+      @items = Item.all
+    end
+
+    @items_mapped = @items.where.not(latitude: nil, longitude: nil)
 
     @markers = @items_mapped.map do |item|
       {
         lng: item.longitude,
         lat: item.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { item: item }),
+        infoWindow: render_to_string(partial: "infowindow", locals: { item: item })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
 
-    if params.has_key?(:q)
-# search in SQL if found name containing anywhere(%) the value of research
-      @items = Item.where('name ILIKE ? OR category ILIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
-    else
-      @items = Item.all
-    end
   end
 
   def show

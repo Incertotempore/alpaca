@@ -1,4 +1,9 @@
 
+
+.culo {
+  z-index: 0;
+}
+
 .header-home {
   box-sizing: border-box;
   min-height: 50vh;
@@ -7,7 +12,7 @@
   transform-style: inherit;
   width: 100vw;
   background-color: #2ccbbb;
-  z-index: -1;
+  z-index: 2;
 }
 
 .header-home h1 {
@@ -20,14 +25,24 @@
   // font-size: 56px;
   letter-spacing: 3px;
   line-height: 60px;
-
-
 }
+
+  // <div class="header-home">1
+  //   <div class="banner-diag"></div>2
+  //   <div class="banner-content">3
+  //     <div class="added-div">4
+  //       <div class="title">5
+  //        <div class="search-container">6
+
+
+
+
+
 
 .banner-content {
 padding-top: 3vh;
 padding-left: 10vw;
-z-index: 10;
+z-index: 3;
 }
 
 
@@ -38,6 +53,7 @@ z-index: 10;
 .added-div {
   display: flex;
   justify-content: space-between;
+  z-index: 4;
 
 }
 
@@ -76,6 +92,8 @@ z-index: 10;
 
 .search-container {
   border-radius: 3px;
+  z-index: 6;
+
 }
 
 .title-on-image {
